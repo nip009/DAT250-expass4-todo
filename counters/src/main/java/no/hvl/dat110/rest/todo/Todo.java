@@ -1,19 +1,23 @@
 package no.hvl.dat110.rest.todo;
 
+import java.util.UUID;
+
 import com.google.gson.Gson;
 
 public class Todo {
 	
-	private Long id;
+	private String uniqueID;
 	private String description;
 	private String summary;
 
 	public Todo () {
+		this.uniqueID = UUID.randomUUID().toString();
 		this.description = "This is default description";
 		this.summary = "This is default summary";
 	}
 
 	public Todo (String description, String summary) {
+		this.uniqueID = UUID.randomUUID().toString();
 		this.description = description;
 		this.summary = summary;
 	}
